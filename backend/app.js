@@ -1,12 +1,30 @@
 require('dotenv').config();
 const express = require('express');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
+const compression = require('compression');
 const cors = require('cors')
+const morgan = require('morgan');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 app.use(express.json());
-
+const shouldCompress = (req, res) => {
+    if (req.headers['x-no-compression']) {
+        return false;
+    }
+    return compression.filter(req, res);
+};
+app.use(compression({
+    filter: shouldCompress,
+    threshold: 0
+}));
 app.use(cors())
+
+const accessLogStream = fs.createWriteStream(path.join(__dirname, '/access.log'), { flags: 'a' });
+app.use(morgan('combined', { stream: accessLogStream }));
 
 const { MongoClient } = require('mongodb')
 const uri = process.env.MONGO_URI
@@ -43,6 +61,7 @@ app.post('/api/addArticle', async(req, res) => {
 
 app.get('/api/articles', async (req, res) => {
   try {
+    await client.connect();
     const articles = await client.db('db-name').collection('articleData').find({}).toArray();
     res.status(200).send(articles);
   } catch (err) {
@@ -98,5 +117,47 @@ app.get('/api/user/:id', async (req, res) => {
     res.status(500).send({ message: "Internal server error" });
   }
 });
+
+app.delete('/api/article/:id', async (req, res) => {
+  try {
+    let id = req.params.id;
+    let o_id = new ObjectId(id)
+    const client = new MongoClient(uri);
+    await client.connect();
+    const article = await client.db('db-name').collection('articleData').deleteOne({_id: o_id})
+    await client.close();
+    if (article) {
+      
+      res.status(200).send({ message: "Article" + id + "is deleted"});
+    } else {
+      res.status(404).send({ message: "Article not found" });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Internal server error" });
+  }
+});
+
+app.put('/api/update/article', async(req, res) => {
+  const article = req.body
+  let o_id = new ObjectId(article._id)
+
+  const client = new MongoClient(uri);
+  //console.log("article" + article.title)
+  await client.connect();
+  await client.db('db-name').collection('articleData').updateOne({_id: o_id}, {"$set": {
+    title: article.title,
+    content: article.content,
+    name: article.name,
+    email: article.email,
+
+  }});
+  await client.close();
+  res.status(200).send({
+    "status": "ok",
+    "message": "Article with ID = " + " is updated",
+    "article": article
+  });
+})
 
 module.exports = app;
