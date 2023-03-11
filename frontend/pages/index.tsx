@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import CardArticle from "@/components/CardArticle";
 import { useRouter } from "next/router";
+import { useSession, signIn, signOut } from "next-auth/react";
 export type ArticleData = {
   _id: string;
   title: string;
@@ -18,6 +19,7 @@ const apiURL = "http://localhost:5000/api/articles";
 
 const Home: NextPage = () => {
   const router = useRouter();
+  const { data: session } = useSession();
   const [articles, setArticles] = useState<ArticleData[] | null>();
 
   useEffect(() => {
@@ -56,7 +58,10 @@ const Home: NextPage = () => {
               auto
               css={{ width: "100%", marginTop: "10px" }}
               onPress={() => {
-                router.push("/Write/");
+                if(session) {
+                  router.push("/Write/");
+                }
+                router.push("/Login/");
               }}
             >
               Write you Story
