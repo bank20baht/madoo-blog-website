@@ -1,4 +1,4 @@
-### madoo-website DCW Final Assignment
+## madoo-website DCW Final Assignment
 blog website demo project for 240-311 client sever
 ## สมาชิกในกลุ่ม
 - 6310110148 นายณัฐพงศ์ พรมทอง  section.02		// frontend
@@ -6,7 +6,7 @@ blog website demo project for 240-311 client sever
 - 6310110558 อภิมุข สุวรรณรัตน์	section.01		    // backend
 
 ## Frontend
-    มีการใช้ nextjs ที่เป็น react framwork ใช้ในการทำ frontend เเละใช้ axios ในการดึงข้อมูลจากตัว restful api ที่ได้ทำไว้ ซึ่งรายละเอียดเป็นดังนี้
+# มีการใช้ nextjs ที่เป็น react framwork ใช้ในการทำ frontend เเละใช้ axios ในการดึงข้อมูลจากตัว restful api ที่ได้ทำไว้ ซึ่งรายละเอียดเป็นดังนี้
 
 ```
 cd frontend
@@ -38,8 +38,8 @@ npm run dev
 - axios เพื่อใช้งาน api ในการทำ CRUD บนหน้า frontend เเละใช้หลักการของ asyn await (non-blocking ทั้งหมด)
 
 ## Backend
-    ใช้ node.js ร่วมกับ express ในการดึงข้อมูลจาก mongodb (บน cloud) ออกมาเเสดงผลที่ส่วน frontend 
-    เเละใช้หลักการของ asyn await (non-blocking ทั้งหมด) โดยมีรายละเอียดดังนี้
+# ใช้ node.js ร่วมกับ express ในการดึงข้อมูลจาก mongodb (บน cloud) ออกมาเเสดงผลที่ส่วน frontend เเละใช้หลักการของ asyn await (non-blocking ทั้งหมด) โดยมีรายละเอียดดังนี้
+
 ```
 cd backend
 npm i
