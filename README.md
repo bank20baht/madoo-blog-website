@@ -18,7 +18,7 @@ npm run dev
 ![main page](https://user-images.githubusercontent.com/89448778/224480033-ebe20981-4b58-4875-b833-07cf1b4be225.png)
 
 
-- มีหน้า เขียน blog
+- มีหน้า เขียน blog (ต้อง login ก่อน)
 ![create article](https://user-images.githubusercontent.com/89448778/224480217-25be5252-aa5e-4ffa-82bf-bb2da4182d47.png)
 
 - หลังจากเขียนเสร็จบทความที่เขียนขึ้นก็จะไปเเสดงผลที่หน้า main

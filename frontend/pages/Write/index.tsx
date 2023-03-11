@@ -22,7 +22,7 @@ const Home = () => {
         setArticleData({...articleData, [e.target.name] : e.target.value})
     }
 
-    console.log(articleData)
+    //console.log(articleData)
     function postArticle() {
         axios.post(apiURL, {
             title: articleData.title,
