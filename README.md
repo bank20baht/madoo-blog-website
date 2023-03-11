@@ -14,15 +14,18 @@ cd frontend
 npm i
 npm run dev
 ```
-- มีหน้าเเสดง บทความทั้งหมดในเว็บไซต์ (get all) เเสดงบทความของฉัน (get by user_name) เเละข้อความนั้นๆ (get by id) ก่อนการโพสต์บทความ
+- มีหน้าเเสดง บทความทั้งหมดในเว็บไซต์ (get all) เเละข้อความนั้นๆ (get by id) ก่อนการโพสต์บทความ
 ![main page](https://user-images.githubusercontent.com/89448778/224480033-ebe20981-4b58-4875-b833-07cf1b4be225.png)
-![my article page](https://user-images.githubusercontent.com/89448778/224480050-14684e4d-0399-4284-8862-6cf34763ec33.png)
+
 
 - มีหน้า เขียน blog
 ![create article](https://user-images.githubusercontent.com/89448778/224480217-25be5252-aa5e-4ffa-82bf-bb2da4182d47.png)
+
 - หลังจากเขียนเสร็จบทความที่เขียนขึ้นก็จะไปเเสดงผลที่หน้า main
 ![main page 2](https://user-images.githubusercontent.com/89448778/224481334-88c85251-5bad-4b3f-8590-0f0c6a3758a4.png)
 
+- หน้าเเสดงบทความของฉัน (get by user_name)
+![my article page](https://user-images.githubusercontent.com/89448778/224480050-14684e4d-0399-4284-8862-6cf34763ec33.png)
 
 - หากเป็นเจ้าของบทความสามารถเเก้ไขเเละลบได้
 ![my article can edit or delete](https://user-images.githubusercontent.com/89448778/224480111-8c72cc59-fb46-4c2d-8e2d-307dd8b8ab07.png)
