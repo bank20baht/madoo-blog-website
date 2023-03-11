@@ -42,6 +42,9 @@ npm run dev
 
 - มีการใช้ session หากไม่ได้ login ก็จะไปที่หน้า เขียน blog ไม่ได้ หาก session หมดอายุก็จะออกจากระบบ
 - axios เพื่อใช้งาน api ในการทำ CRUD บนหน้า frontend เเละใช้หลักการของ asyn await (non-blocking ทั้งหมด)
+- ถ้าหากการดึงข้อมูลยังไม่เสร็จจะมีการ loading
+![loading from db](https://user-images.githubusercontent.com/89448778/224482328-d4300aed-6205-42ab-88d8-83e5448ac1a1.png)
+
 
 # Backend
 - ใช้ node.js ร่วมกับ express ในการดึงข้อมูลจาก mongodb (บน cloud) ออกมาเเสดงผลที่ส่วน frontend เเละใช้หลักการของ asyn await (non-blocking ทั้งหมด) โดยมีรายละเอียดดังนี้
