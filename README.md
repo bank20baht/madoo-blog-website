@@ -14,7 +14,7 @@ cd frontend
 npm i
 npm run dev
 ```
-- มีหน้าเเสดง บทความทั้งหมดในเว็บไซต์ (get all) เเละข้อความนั้นๆ (get by id) ก่อนการโพสต์บทความ
+- มีหน้าเเสดง บทความทั้งหมดในเว็บไซต์ (get all) เเละข้อความนั้นๆถ้าคลิ๊กเข้าไป (get by id) 
 ![main page](https://user-images.githubusercontent.com/89448778/224480033-ebe20981-4b58-4875-b833-07cf1b4be225.png)
 
 
