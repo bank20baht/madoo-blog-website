@@ -58,10 +58,10 @@ const Home: NextPage = () => {
               auto
               css={{ width: "100%", marginTop: "10px" }}
               onPress={() => {
-                if(session) {
-                  router.push("/Write/");
-                }
-                router.push("/Login/");
+                !session ? (
+                  router.push("/Login")
+                ) :
+                ( router.push("/Write"))
               }}
             >
               Write you Story
