@@ -1,12 +1,13 @@
-## madoo-website DCW Final Assignment
-blog website demo project for 240-311 client sever
-## สมาชิกในกลุ่ม
+# madoo-website DCW Final Assignment
+# blog website demo project for 240-311 client sever
+
+# สมาชิกในกลุ่ม
 - 6310110148 นายณัฐพงศ์ พรมทอง  section.02		// frontend
 - 6310110471 ศหฤงคาร สุขสบาย	section.02 	  	// backend
 - 6310110558 อภิมุข สุวรรณรัตน์	section.01		    // backend
 
-## Frontend
-# มีการใช้ nextjs ที่เป็น react framwork ใช้ในการทำ frontend เเละใช้ axios ในการดึงข้อมูลจากตัว restful api ที่ได้ทำไว้ ซึ่งรายละเอียดเป็นดังนี้
+# Frontend
+- มีการใช้ nextjs ที่เป็น react framwork ใช้ในการทำ frontend เเละใช้ axios ในการดึงข้อมูลจากตัว restful api ที่ได้ทำไว้ ซึ่งรายละเอียดเป็นดังนี้
 
 ```
 cd frontend
@@ -37,27 +38,14 @@ npm run dev
 - มีการใช้ session หากไม่ได้ login ก็จะไปที่หน้า เขียน blog ไม่ได้ หาก session หมดอายุก็จะออกจากระบบ
 - axios เพื่อใช้งาน api ในการทำ CRUD บนหน้า frontend เเละใช้หลักการของ asyn await (non-blocking ทั้งหมด)
 
-## Backend
-# ใช้ node.js ร่วมกับ express ในการดึงข้อมูลจาก mongodb (บน cloud) ออกมาเเสดงผลที่ส่วน frontend เเละใช้หลักการของ asyn await (non-blocking ทั้งหมด) โดยมีรายละเอียดดังนี้
+# Backend
+- ใช้ node.js ร่วมกับ express ในการดึงข้อมูลจาก mongodb (บน cloud) ออกมาเเสดงผลที่ส่วน frontend เเละใช้หลักการของ asyn await (non-blocking ทั้งหมด) โดยมีรายละเอียดดังนี้
 
 ```
 cd backend
 npm i
 node server.js
 ```
-# มีการเก็บ log โดยใช้ morgan เเละใช้ file stream ในการนำ log นั้นมาเก็บค่าใน access.log
-![log](https://user-images.githubusercontent.com/89448778/224479679-dfdec40c-cd29-41a5-bfa3-9cf164fd78b5.png)
-
-# Authentication
-- ใช้ nextauth ใน next.js ในการทำ oauth ของ google ซึ่งจะมีการ genarate jwt ออกมาเเละยังสามารถกำหนดเวลาหมดอายุได้ ในโปรเจคนี้ได้กำหนดที่ 1 วัน
-![token](https://user-images.githubusercontent.com/89448778/224479743-ed8071be-9ff7-4d98-a422-3e9bda6c5f56.png)
-
-# express.json(): แปลงข้อมูลที่มีรูปแบบ JSON String ให้อยู่ในรูป JSON Object
-
-# ใช้ cors เป็น middleware เพื่อใช้ในการส่งข้อมูล ของบทความ ไปแสดงใน frontend เพราะมันอยู่คนละโดเมนต้องใช้เพื่อให้ browser อนุญาติ
-
-# ใช้ compression ในการบีบอัดเพื่อให้ประหยัด bw
-
 # มีการใช้หลักการของ CRUD
 - POST /api/addArticle: สร้างบทความใหม่พร้อมกับบันทึก title, content, user_email, user_name และ user_img ในฐานข้อมูล พร้อมข้อความแสดงสถานะและข้อมูลบทความที่สร้างขึ้น
 - GET /api/articles: ดึงข้อมูลบทความทั้งหมดจากฐานข้อมูล
@@ -66,5 +54,19 @@ node server.js
 - DELETE /api/article/:id: ลบบทความที่มี ID ตรงกันในฐานข้อมูลพร้อมข้อความแสดงสถานะ
 - PUT /api/update/article: อัปเดตบทความที่มีอยู่ในฐานข้อมูล พร้อมข้อความแสดงสถานะและข้อมูลบทความที่ถูกอัปเดต
 
-# มีการใช้ env จาก dotenv กำหนดตัวแปรสภาพแวดล้อมจากไฟล์ .env
+- มีการเก็บ log โดยใช้ morgan เเละใช้ file stream ในการนำ log นั้นมาเก็บค่าใน access.log
+![log](https://user-images.githubusercontent.com/89448778/224479679-dfdec40c-cd29-41a5-bfa3-9cf164fd78b5.png)
+
+- Authentication
+- ใช้ nextauth ใน next.js ในการทำ oauth ของ google ซึ่งจะมีการ genarate jwt ออกมาเเละยังสามารถกำหนดเวลาหมดอายุได้ ในโปรเจคนี้ได้กำหนดที่ 1 วัน
+![token](https://user-images.githubusercontent.com/89448778/224479743-ed8071be-9ff7-4d98-a422-3e9bda6c5f56.png)
+
+- express.json(): แปลงข้อมูลที่มีรูปแบบ JSON String ให้อยู่ในรูป JSON Object
+- ใช้ cors เป็น middleware เพื่อใช้ในการส่งข้อมูล ของบทความ ไปแสดงใน frontend เพราะมันอยู่คนละโดเมนต้องใช้เพื่อให้ browser อนุญาติ
+- ใช้ compression ในการบีบอัดเพื่อให้ประหยัด bw
+- มีการใช้ env จาก dotenv กำหนดตัวแปรสภาพแวดล้อมจากไฟล์ .env
+
+
+
+
 
