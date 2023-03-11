@@ -24,7 +24,7 @@ const Home = () => {
           content: response.data.content,
         };
         setArticleData(initalState);
-        console.log(initalState);
+        //console.log(initalState);
       });
     }
   }, [id]);
@@ -33,7 +33,7 @@ const Home = () => {
     setArticleData({ ...articleData, [e.target.name]: e.target.value });
   };
 
-  console.log(articleData);
+  //console.log(articleData);
   async function editArticle() {
     try {
       const response = await axios.put(

@@ -20,13 +20,13 @@ const MyStory = () => {
   const [articles, setArticles] = useState<ArticleData[] | null>();
   const router = useRouter();
   const { id } = router.query;
-  console.log("id in Mystroty page => " + id);
+  //console.log("id in Mystroty page => " + id);
   useEffect(() => {
     const getMyArticle = async () => {
       try {
         const response = await axios.get(apiURL + id);
         setArticles(response.data);
-        console.log(response.data);
+        //console.log(response.data);
       } catch (error) {
         console.error(error);
       }

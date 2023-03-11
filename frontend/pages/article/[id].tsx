@@ -28,7 +28,7 @@ const Article = () => {
       try {
         const response = await axios.get(apiURL + id);
         setArticle(response.data);
-        console.log(response.data);
+        //console.log(response.data);
       } catch (error) {
         console.error(error);
       }
