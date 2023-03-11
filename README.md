@@ -71,7 +71,9 @@ node server.js
 
 - express.json(): แปลงข้อมูลที่มีรูปแบบ JSON String ให้อยู่ในรูป JSON Object
 - ใช้ cors เป็น middleware เพื่อใช้ในการส่งข้อมูล ของบทความ ไปแสดงใน frontend เพราะมันอยู่คนละโดเมนต้องใช้เพื่อให้ browser อนุญาติ
-- ใช้ compression ในการบีบอัดเพื่อให้ประหยัด bw
+- ใช้ compression ในการบีบอัดเพื่อให้ประหยัด bw (gzip)
+![gzip](https://user-images.githubusercontent.com/89448778/224482512-4ef66c12-0b0c-4687-9584-1525a5849aae.png)
+
 - มีการใช้ env จาก dotenv กำหนดตัวแปรสภาพแวดล้อมจากไฟล์ .env
 - cloud mongodb
 ![mongodb](https://user-images.githubusercontent.com/89448778/224481791-7a02e338-7e6d-42c1-a7cb-ff577c122fe6.png)
