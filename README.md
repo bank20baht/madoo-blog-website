@@ -34,6 +34,9 @@ npm run dev
 - หน้า edit article 
 ![edit article](https://user-images.githubusercontent.com/89448778/224480070-5b677ff9-b950-4327-9e64-0a57b9798b8b.png)
 
+- เมื่อกดอัพเดทเเล้วมันก็จะเเก้ไขตามที่ต้องการเเละ db ก็จะ update
+![after update](https://user-images.githubusercontent.com/89448778/224619230-79bef1b7-d67e-4472-b81c-8c8e31261128.png)
+
 - ถ้าไม่มีก็จะไม่มีปุ่ม edit หรือ delete
 ![not my article (2)](https://user-images.githubusercontent.com/89448778/224480187-e721396f-9c39-4f52-9212-bb800702d502.png)
 
@@ -70,7 +73,7 @@ node server.js
 - ใช้ nextauth ใน next.js ในการทำ oauth ของ google ซึ่งจะมีการ genarate jwt ออกมาเเละยังสามารถกำหนดเวลาหมดอายุได้ ในโปรเจคนี้ได้กำหนดที่ 1 วัน
 ![token](https://user-images.githubusercontent.com/89448778/224479743-ed8071be-9ff7-4d98-a422-3e9bda6c5f56.png)
 
-- express.json(): แปลงข้อมูลที่มีรูปแบบ JSON String ให้อยู่ในรูป JSON Object
+- express.json(): แปลงข้อมูลที่มีรูปแบบ JSON String ให้อยู่ในรูป JSON Object Middleware เเบบมีมากับตัว express เเล้ว
 - ใช้ cors เป็น middleware เพื่อใช้ในการส่งข้อมูล ของบทความ ไปแสดงใน frontend เพราะมันอยู่คนละโดเมนต้องใช้เพื่อให้ browser อนุญาติ
 - ใช้ compression ในการบีบอัดเพื่อให้ประหยัด bw (gzip)
 ![gzip](https://user-images.githubusercontent.com/89448778/224482512-4ef66c12-0b0c-4687-9584-1525a5849aae.png)
