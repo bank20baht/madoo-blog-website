@@ -8,9 +8,10 @@ const cors = require("cors");
 const morgan = require("morgan");
 const fs = require("fs");
 const path = require("path");
+const bodyParser = require('body-parser');
 
 const app = express();
-app.use(express.json());
+app.use(bodyParser.json());
 const shouldCompress = (req, res) => {
   if (req.headers["x-no-compression"]) {
     return false;
