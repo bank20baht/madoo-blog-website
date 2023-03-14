@@ -73,7 +73,7 @@ node server.js
 - ใช้ nextauth ใน next.js ในการทำ oauth ของ google ซึ่งจะมีการ genarate jwt ออกมาเเละยังสามารถกำหนดเวลาหมดอายุได้ ในโปรเจคนี้ได้กำหนดที่ 1 วัน
 ![token](https://user-images.githubusercontent.com/89448778/224479743-ed8071be-9ff7-4d98-a422-3e9bda6c5f56.png)
 
-- express.json(): แปลงข้อมูลที่มีรูปแบบ JSON String ให้อยู่ในรูป JSON Object Middleware เเบบมีมากับตัว express เเล้ว
+- body-parser.json(): แปลงข้อมูลที่มีรูปแบบ JSON String ให้อยู่ในรูป JSON Object Middleware จากตัว body-parser
 - ใช้ cors เป็น middleware เพื่อใช้ในการส่งข้อมูล ของบทความ ไปแสดงใน frontend เพราะมันอยู่คนละโดเมนต้องใช้เพื่อให้ browser อนุญาติ
 - ใช้ compression ในการบีบอัดเพื่อให้ประหยัด bw (gzip)
 ![gzip](https://user-images.githubusercontent.com/89448778/224482512-4ef66c12-0b0c-4687-9584-1525a5849aae.png)
